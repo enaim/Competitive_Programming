@@ -1,0 +1,74 @@
+
+1.Initialize a git repo
+	=> git init
+	
+2. Add a file to repo
+		=> git add <FileName With Path>
+	
+	Example: git add test1/hi.cpp
+			git add git.cpp
+			
+2.1 Check git status.
+	=> git status
+			
+3. Commit.
+	=> git commit <file1> <file2> -m "<message>"
+	=> git commit -a -m "<Message>"
+	
+	Example:
+		git commit hi.cpp -m "First commit."
+		git commit test1/hi.cpp "BFS implemented but not tested."
+		
+4. Show commit list.
+	=> git log
+	
+5. Switch between commits.
+	=> git checkout <SHA>
+	git checkout 943292990kjksjdf       //SHA should be menimum 8 characters.
+	
+6. Creat Branch
+	=> git checkout -b <branch name>
+	Ex: 
+	git checkout -b mytest
+
+7. See all branches.
+		=> git branch
+		=> git branch -a  //All local branches
+		
+8. Switch between branches
+	git checkout <branch_name>
+	
+9. Undo all local changes.
+	=> git checkout -f
+	
+10. Remove all local untracked files(files not added into git).
+	=> git clean -f -d
+	
+11. Merge branch A into branch B.
+	=> git checkout B		// Not needed if your current location is B.
+	=> git merge A
+	
+12. Add remote.
+	=> git remote add origin <git url>
+	
+12. Push a branch into origin (remote)	
+	=> git push origin <current branch name>
+	Ex: git push origin master
+	
+13. Git clone
+		=> git clone <repository url>
+		=> git clone https://github.com/enaim/practice
+		
+14. Git pull
+	=> git pull origin <branch name>
+	=> git pull origin master
+		
+		
+		
+----------------------------------------------
+File types in git:
+	1. Untracked file: Files not added into git.
+	2. Modified: File modified after the last commit.
+	3. Commited file: All changes of those file is commited. Those files are not shown in "git status" command;
+
+	

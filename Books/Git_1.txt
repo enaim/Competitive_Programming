@@ -1,0 +1,66 @@
+git init	///create repository
+git config --global user.name "Naim_Elias"
+git config --global user.email "naimelias56@gmail.com"
+git config --list
+git status
+git add cold.txt
+git status
+git add --all/git add .		///for adding all files in staging area
+git commit 		///write a massage on notepad first line then save and exit.  
+git commit -m "chocolate added"
+git log
+git log --oneline	/// Show all commits in one line
+		/// cold update write Ice cube added in inside
+git add .
+git commit -m "Ice Cube Added"
+git log -oneline
+git checkout (chocolate added number) 	///for returning chocolate added phase we see the line is deleted from cold txt file
+					/// git checkout is used for shifting one phasestate to another phase.
+git log --onelinegit checkout (two file added number)
+git log -oneline
+git checkout master						///now we go the master branch
+		///chocolate update write some chocolate added in inside
+git status
+git diff		///for checking difference in last change from last commit
+git log --oneline
+git show (chocolate added commit number)	//it shows chocolate added phase change
+		///chocolate update write dark chocolate added in inside
+git add .
+git commit -m "dark chocolate added"
+git diff (chocolate added commit number) (dark chocolate added commit number)	///diff between two commit
+		///chocolate update write more chocolate added in inside
+git add .
+git diff 	///nothing show caused changed is staged
+git diff --staged	///difference between staged file with last commit
+
+git rm hot.txt ///delete a file from git permanently
+git status	///they still tracked hot.txt in staging area
+git reset HEAD hot.txt	///for untracke hot.txt from staging area
+git status
+git commit -m "hot txt deleted"  
+  
+SSH key:
+ssh-keygen -o -t rsa -C "naimelias56@gmail.com"	///enaim #include
+eval $(ssh-agent -s)	///next line come with "Agent pid 545"
+ssh-add ~/.ssh/id_rsa	/// next line should be come with "Identity Added......"
+clip < ~/.ssh/id_rsa.pub ///for copying ssh key identity
+FROM repository STUDENT SSH option:
+git remote add origin git@github.com:enaim/Student.git
+git push -u origin master
+yes
+
+Git Clone:
+git clone git@github.com:enaim/Student.git
+git clone  git@github.com:enaim/Student.git newName
+		///adding a line on student.txt from online and commit "new line added" 
+git fetch	
+git status			///shows "Your branch is behind 'origin/master' by 1 commit...."
+git pull		///changes made
+
+git branch newbranch 		///Creating new branch
+git checkout newbranch
+git checkout -b home_branch  	 ///Create new branch and switched on the new branch
+git checkout master 		/// going to the master branch
+git marge home_branch 		/// merging home_branch with master branch
+
+git statsh 	///for save changes

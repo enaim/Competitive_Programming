@@ -1,0 +1,151 @@
+Number of pairs of a given LCM n:
+ans = ((2e1+1)(2e2+1)...(2ek+1)+1)/2
+Where,n=p1^e1*p2^e2*...*pk^ek where pi is a prime and ei is its power.
+
+Number of Divisors of a prime p in n!:
+result = [n/p^1] + [n/p^2] + [n/p^3] + [n/p^4] + …
+
+Number of Divisors in n!:
+result = (sum1+1)(sum2+1)(sum3+1)... where sumi is the number of divisor of prime pi in n!
+
+Number of Divisiors of a number n:
+result = (e1+1)*(e2+1)*(e3+1)...
+
+Sum of Divisors of a number n:
+result = ((p1^(e1+1))-1)/(p1-1) * ((p2^(e2+1))-1)/(p2-1) * ....
+
+Product of Divisors of a number n:
+result = n^(NOD/2);
+
+Numbers of Co-Primes of a number n:
+phi(n) = n*(1-1/p1)*(1-1/p2)*(1-1/p3)...
+
+Summation of Co-Primes of a number n:
+result = phi(n)*(n/2)
+
+The number of ways of writing a number as a product of two numbers:
+	If the number is not a perfect square	
+		result = (1/2)*(NOD)
+	If the number is a perfect square	
+		as product of two distinct numbers
+			result = (1/2)*(NOD - 1)
+		as a product of two numbers those numbers need not be distinct
+			result = (1/2)*(NOD - 1)
+			
+The number of ways of writing a number N as a product of two co-prime numbers:
+result = ((2^n)-1) , where 'n' is the number of prime factors of a number
+
+Digits of Factorial:
+number of digits in x in 10 based number system is log10(x)+1
+number of digits in x in b based number system is logb(x)+1
+
+log2(x) = logy(x) / logy(2)
+
+logx(y) = logx(z) * logz(y)
+logz(y) = logx(y) / logx(z)
+logb(n) = log10(n) / log10(b)
+
+log10(x*y*z)=log10(x)+log10(y)+log10(z)
+
+number of digits in n! in b based number system
+for(int i=1;i<=1000000;i++)
+    logg[i]=logg[i-1] + log10(i);
+ans = logg[n]/log10(b) + 1;
+
+Leading Digits 123^12345
+12345log123=25799.8786007193674681258...
+Now 10^0.8786007193674681258…=7.561373995463164607
+
+BIG MOD:
+long long BigMod (long long b,long long p){
+    ll ans = 1;
+    while(p){
+        if(p & 1)
+            ans = (ans * b) % M;
+        b = (b * b) % M;
+        p = p >> 1;
+    } 
+    return ans;
+}
+
+Euler Totient:
+unsigned long long phi[5000010]; 
+void Euler_totient_function(){
+     for(ll i=2;i<=5e6;i++)
+        phi[i]=i;
+     for(ll i=2;i<=5e6;i++){
+         if(phi[i]==i){
+             for(ll j=i;j<=5e6;j+=i)
+                phi[j]=phi[j]/i * (i-1);
+         }
+     }
+}
+
+Bitmask Sieve:
+const int FLAG_SIZE = 100000100;
+const int PRIME_SIZE = 5761500;
+ll flag[FLAG_SIZE/64+10];
+int prime[PRIME_SIZE],ind;
+
+void sieve()//1 indexed
+{
+    long long i,j,k;
+    for(i=3;i<FLAG_SIZE;i+=2)
+         if(!(flag[i/64]&(1LL<<(i%64))))
+                for(j=i*i;j<FLAG_SIZE;j+=2*i)
+                    flag[j/64]|=(1LL<<(j%64));
+    prime[ind++]=2;
+    for (int i=3;i<FLAG_SIZE;i+=2)
+        if(!(flag[i/64]&(1LL<<(i%64))))
+            prime[ind++] = i;
+}
+
+int josephus(int n, int k){
+    int res = 0;
+    for (int i = 1; i <= n; ++i)
+      res = (res + k) % i;
+    return res + 1;
+}
+
+void All_Divisors(int n){
+    for (int i=1; i<=sqrt(n); i++){
+        if (n%i == 0){
+            if (n/i == i)	ar[cnt++]=i;
+            else	ar[cnt++]=i,ar[cnt++]=n/i;
+        }
+    }
+}
+
+vector<int>divisor[1000010];
+void Divisor(){
+    for(int i=1;i<=1000000;i++)
+        for(int j=i;j<=1000000;j+=i)
+            divisor[j].push_back(i);
+}
+
+void nCr(int n,int r)
+{
+    int i,j;
+    for(i=0;i<=n;i++){
+        for(j=0;j<=r;j++){
+            if(j==0 || j==i)	dp[i][j]=1;
+            else	dp[i][j]=((dp[i-1][j-1]%M)+(dp[i-1][j]%M))%M;
+        }
+    }
+}
+
+const int MOD = ....
+const int MAX = ....
+int catalan[MAX];
+void init() {
+    catalan[0] = catalan[1] = 1;
+    for (int i=2; i<=n; i++) {
+        catalan[i] = 0;
+        for (int j=0; j < i; j++) {
+            catalan[i] += (catalan[j] * catalan[i-j-1]) % MOD;
+            if (catalan[i] >= MOD) {
+                catalan[i] -= MOD;
+            }
+        }
+    }
+}

@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+#include <ctype.h>
+
+#include <iostream>
+#include <algorithm>
+
+using namespace std;
+
+#define deb(a)    cout<<__LINE__<<"# "<<#a<<" -> "<<a<<endl;
+
+typedef long long ll;
+
+const double pi = acos(-1);
+
+template<class T> T abs(T x){
+    if(x<0) return -x;
+    return x;
+}
+
+
+int main()
+{
+//    freopen("in.txt","r",stdin);
+//    freopen("output.txt","w",stdout);
+
+
+//    int tks,ks=1;
+//    scanf("%d",&tks);
+//    while(tks--)
+//    {
+////        printf("Case %d: ",ks++);
+//    }
+
+
+//    while(1==scanf("",&))
+//    {
+//        printf("\n");
+//    }
+
+    return 0;
+}

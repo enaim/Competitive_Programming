@@ -1,0 +1,60 @@
+from collections import defaultdict 
+
+graph = {
+    'A' : ['B','E'],
+    'B' : ['A'],
+    'C' : ['D','E','F','G'],
+    'D' : ['C'],
+    'E' : ['A','C','H'],
+    'F' : ['C','I'],
+    'G' : ['C','H'],
+    'H' : ['E','G','I'],
+    'I' : ['F','H']
+}
+
+vis = {
+    'A' : 0,
+    'B' : 0,
+    'C' : 0,
+    'D' : 0,
+    'E' : 0,
+    'F' : 0,
+    'G' : 0,
+    'H' : 0,
+    'I' : 0
+}
+
+cost = {
+    'A' : 0,
+    'B' : 0,
+    'C' : 0,
+    'D' : 0,
+    'E' : 0,
+    'F' : 0,
+    'G' : 0,
+    'H' : 0,
+    'I' : 0
+}
+
+f = 0
+vis['A']=1
+cost['A']=0
+Q = []
+Q.append('A')
+vis['A']=1
+while Q:
+    t = Q.pop(0)
+    print(t," cost is -> ",cost[t]);
+    for i in graph[t]:
+        if vis[i]==0:
+            vis[i]=1
+            cost[i]=cost[t]+1
+            Q.append(i)
+            if i=='G':
+                print(i," cost is -> ",cost[i]);
+                f = 1
+                break
+    if(f==1):
+        break
+
+

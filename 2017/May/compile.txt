@@ -1,0 +1,4 @@
+Compile a C++ file:
+	g++ --std=c++11 <.cpp file name> -o <executable>
+Example:
+	g++ --std=c++11 test.cpp -o run; ./run

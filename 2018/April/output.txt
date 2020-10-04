@@ -1,0 +1,10 @@
+Case 1: Crying
+Case 2: Foot
+Case 3: Rickshaw
+Case 4: Foot
+Case 5: Foot
+Case 6: Foot
+Case 7: Foot
+Case 8: Foot
+Case 9: Crying
+Case 10: Rickshaw

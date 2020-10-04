@@ -1,0 +1,23 @@
+git version
+cd /d/Naim Elias/
+mkdir Codes
+cd Codes/
+pwd
+$ git config --global user.name "enaim"
+$ git config --global user.email "naimelias45@gmail.com"
+$ git config --global --list
+codes $ git clone https://github.com/enaim/github-demo.git
+ls
+cd github-demo/
+ls
+git status
+/clear for clean terminal/
+$ echo "Test Git Quick Start demo" >> start.txt
+ls
+$ cat start.txt
+$ git status
+$ git add start.txt
+$ git status
+$ git commit -m "Adding start text file"
+$ git status
+$ git push origin  master
