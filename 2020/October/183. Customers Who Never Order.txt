@@ -1,0 +1,3 @@
+Select C.Name As 'Customers' From Customers As C
+Where Not Exists(Select O.Id From Orders As O
+             Where C.Id = O.CustomerId)

@@ -30,7 +30,7 @@ long long nCrModPFermat(long long n,  long long r, long long p)
     if (r == 0LL)
         return 1LL;
 
-    return (fac[n] * modInverse(fac[r], p) % p * modInverse(fac[n - r], p) % p) % p;
+    return (((fac[n] * modInverse(fac[r], p))%p) * (modInverse(fac[n - r], p) % p)) % p;
 }
 
 void init()
